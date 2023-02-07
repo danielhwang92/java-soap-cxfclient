@@ -1,0 +1,1076 @@
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+    xmlns:tns="http://tempuri.org/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:s="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+            <s:element name="EcValidacionPorPredio">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="EcEntidadColaboradoraId" type="s:int"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EcProcesoId" type="s:int"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EcMacroProcesoId" type="s:int"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="NumeroPredial" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsusarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcValidacionPorPredioResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcValidacionPorPredioResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="cls_ent_cola_respuesta_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="strCodigo" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="strMensaje" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcIngresoSolicitud">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="tipoAccion" type="s:int"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ObservacionVitacora" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioVitacora" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="entEcSolicitud" type="tns:cls_ent_cola_ecsolicitud_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcTipoProyecto" type="tns:ArrayOfCls_ent_cola_ectipoproyecto_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcUsos" type="tns:ArrayOfCls_ent_cola_ecusos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcEquipamientos" type="tns:ArrayOfCls_ent_cola_ecequipamientos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcAreas" type="tns:ArrayOfCls_ent_cola_ecareas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcEtapas" type="tns:ArrayOfCls_ent_cola_ecetapas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcAgenteExterno" type="tns:ArrayOfCls_ent_cola_ecagenteexterno_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcLotesLinderos" type="tns:ArrayOfCls_ent_cola_ecloteslinderos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcRubros" type="tns:ArrayOfCls_ent_cola_ecrubros_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcGarantias" type="tns:ArrayOfCls_ent_cola_ecgarantias_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcLotesContribucion" type="tns:ArrayOfCls_ent_cola_ecloteslinderoscontrib_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="cls_ent_cola_ecsolicitud_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EcProcesoId" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EcEntidadColaboradoraId" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="UsuarioRegistro" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreProyecto" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NumeroPredial" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ClaveCatastral" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Parroquia" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Barrio" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Zonificacion" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="UsoPrincipal" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ClasificacionSuelo" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ServiciosBasicos" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Observacion" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="IncrementoPisosZuae" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="IncrementoNumPisos" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ResponsableEC" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EcMacroprocesoId" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tarifa" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaUtil" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CostoM2" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Factor" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="LoteMinimo" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="IRM" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="DependenciaAdm" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CompraPisos" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Etapa" nillable="true" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaRegistro" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaEmision" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaDevolucion" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaBaja" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaFinalizacion" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="TipoSubdivision" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="TipoVivienda" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="PredioGlobal" type="s:decimal"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ectipoproyecto_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ectipoproyecto_entity" nillable="true" type="tns:cls_ent_cola_ectipoproyecto_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ectipoproyecto_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EcMacroprocesoId" type="s:int"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecusos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecusos_entity" nillable="true" type="tns:cls_ent_cola_ecusos_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecusos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Unidades" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Estacionamientos" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaBruta" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaNoComputable" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaUtil" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreAdicional" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Visitas" type="s:int"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecequipamientos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecequipamientos_entity" nillable="true" type="tns:cls_ent_cola_ecequipamientos_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecequipamientos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaUtil" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreAdicional" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecareas_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecareas_entity" nillable="true" type="tns:cls_ent_cola_ecareas_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecareas_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="M2" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Porcentaje" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreAdicional" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecetapas_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecetapas_entity" nillable="true" type="tns:cls_ent_cola_ecetapas_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecetapas_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Etapa" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Rubro" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Unidad" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Cantidad" nillable="true" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CostoUnitEpmmop" nillable="true" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CostoParcial" nillable="true" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Lmu20" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Denominacion" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="NumUnidades" nillable="true" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Niveles" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Area" nillable="true" type="s:double"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecagenteexterno_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecagenteexterno_entity" nillable="true" type="tns:cls_ent_cola_ecagenteexterno_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecagenteexterno_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Ci" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Profesional" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="LicenciaMunicipal" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Senescyt" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Proyectista" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Calculista" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Instalaciones" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecloteslinderos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecloteslinderos_entity" nillable="true" type="tns:cls_ent_cola_ecloteslinderos_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecloteslinderos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="NumLote" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Area" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Norte" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Sur" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Este" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Oeste" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaProtec" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaEsc" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaAfec" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaProtecEsp" type="s:double"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecrubros_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecrubros_entity" nillable="true" type="tns:cls_ent_cola_ecrubros_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecrubros_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CostoUnitEpmmop" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CostoTotal" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo1" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo2" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo3" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo4" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo5" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo6" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo7" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Tiempo8" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreAdicional" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecgarantias_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecgarantias_entity" nillable="true" type="tns:cls_ent_cola_ecgarantias_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecgarantias_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Observacion" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreAdicional" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfCls_ent_cola_ecloteslinderoscontrib_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_ecloteslinderoscontrib_entity" nillable="true" type="tns:cls_ent_cola_ecloteslinderoscontrib_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_ecloteslinderoscontrib_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Identificador" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="NumLote" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="Area" type="s:double"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Norte" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Sur" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Este" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Oeste" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaProtec" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaEsc" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaAfec" type="s:double"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="AreaProtecEsp" type="s:double"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcIngresoSolicitudResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcIngresoSolicitudResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcActualizarFechaPago">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strFecha" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcActualizarFechaPagoResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcActualizarFechaPagoResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcRespuestaTramite">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strFecha" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strFechaFinalizado" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcRespuestaTramiteResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcRespuestaTramiteResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcSubirDocumentacion">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="entEcEscaneos" type="tns:cls_ent_cola_ecescaneos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="cls_ent_cola_ecescaneos_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Ip" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreArchivo" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:base64Binary"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Detalle" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcSubirDocumentacionResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSubirDocumentacionResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcDarBajaTramite">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strEstado" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strFechaBaja" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strObservacion" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcDarBajaTramiteResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcDarBajaTramiteResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcDarBajaArchivo">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strNombreArchivo" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strObservacion" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strUsuarioBaja" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcDarBajaArchivoResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcDarBajaArchivoResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarDatosTramite">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="entEcSolicitud" type="tns:cls_ent_cola_ecsolicitud_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcTipoProyecto" type="tns:ArrayOfCls_ent_cola_ectipoproyecto_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcUsos" type="tns:ArrayOfCls_ent_cola_ecusos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcEquipamientos" type="tns:ArrayOfCls_ent_cola_ecequipamientos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcAreas" type="tns:ArrayOfCls_ent_cola_ecareas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEtapas" type="tns:ArrayOfCls_ent_cola_ecetapas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstAgenteExterno" type="tns:ArrayOfCls_ent_cola_ecagenteexterno_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstLotesLinderos" type="tns:ArrayOfCls_ent_cola_ecloteslinderos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstRubros" type="tns:ArrayOfCls_ent_cola_ecrubros_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstGarantias" type="tns:ArrayOfCls_ent_cola_ecgarantias_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstLotesContribucion" type="tns:ArrayOfCls_ent_cola_ecloteslinderoscontrib_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarDatosTramiteResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcConsultarDatosTramiteResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="entEcSolicitud" type="tns:cls_ent_cola_ecsolicitud_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcTipoProyecto" type="tns:ArrayOfCls_ent_cola_ectipoproyecto_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcUsos" type="tns:ArrayOfCls_ent_cola_ecusos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcEquipamientos" type="tns:ArrayOfCls_ent_cola_ecequipamientos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcAreas" type="tns:ArrayOfCls_ent_cola_ecareas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEtapas" type="tns:ArrayOfCls_ent_cola_ecetapas_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstAgenteExterno" type="tns:ArrayOfCls_ent_cola_ecagenteexterno_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstLotesLinderos" type="tns:ArrayOfCls_ent_cola_ecloteslinderos_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstRubros" type="tns:ArrayOfCls_ent_cola_ecrubros_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstGarantias" type="tns:ArrayOfCls_ent_cola_ecgarantias_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstLotesContribucion" type="tns:ArrayOfCls_ent_cola_ecloteslinderoscontrib_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarLicenciasPredio">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="NumPredio" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcLicencias" type="tns:ArrayOfCls_ent_cola_eclicencias_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfCls_ent_cola_eclicencias_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_eclicencias_entity" nillable="true" type="tns:cls_ent_cola_eclicencias_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_eclicencias_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="NumeroLicencia" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NumeroExpediente" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Propietario" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CedulaRuc" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreProyecto" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Macroproceso" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Proceso" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="AdmZonal" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Ventanilla" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FechaEmision" nillable="true" type="s:dateTime"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="EstadoTramite" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcConsultarLicenciasPredioResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcConsultarLicenciasPredioResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstEcLicencias" type="tns:ArrayOfCls_ent_cola_eclicencias_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarPrediosEgresados">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="NumPredio" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ClaveCatastral" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstPrediosEgresados" type="tns:ArrayOfCls_ent_cola_predioglobal_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfCls_ent_cola_predioglobal_entity">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="cls_ent_cola_predioglobal_entity" nillable="true" type="tns:cls_ent_cola_predioglobal_entity"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="cls_ent_cola_predioglobal_entity">
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" name="NumeroPredial" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombrePropietario" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CedulaPropietario" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcConsultarPrediosEgresadosResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcConsultarPrediosEgresadosResult" type="tns:cls_ent_cola_respuesta_entity"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lstPrediosEgresados" type="tns:ArrayOfCls_ent_cola_predioglobal_entity"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcIngresoSolicitudCOD">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="tipoAccion" type="s:int"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="solicitud" type="tns:DtoFormulario"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="DtoFormulario">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="AGENTEEXTERNO" type="tns:ArrayOfDtoAgente"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ANTICIPO_FECHA" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="BARRIO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CALLE" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CLASIFICACION_SUELO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CLAVE_CATASTRAL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CONCEPTO" type="tns:ArrayOfDtoConcepto"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="DEPENDENCIA_ADMINISTRATIVA" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EC_MACROPROCESO_ID" type="s:decimal"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EC_PROCESO_ID" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="FECHA_DAR_DE_BAJA" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="FECHA_DEVOLUCION" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="FECHA_EMISIONCC" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="FECHA_FINALIZADO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="FECHA_REGISTRO" type="s:dateTime"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="ID_ENTIDAD_COLABORADORA" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="INCREMENTO_NUM_PISOS" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="IRM" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="LOTE_MINIMO" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_PROYECTO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NUMERO_PREDIAL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="OBSERVACION" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="PARROQUIA" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="PREDIO_GLOBAL" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="PRIMERA_SUBDIVISION_LOTES" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="RESPONSABLE_EC" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="SOLICITUD_ID" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="TIPO_VIVIENDA" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="USO_PRINCIPAL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="USUARIO_CREACION" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ZONIFICACION" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ExtensionDataObject"/>
+            <s:complexType name="ArrayOfDtoAgente">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="DtoAgente" nillable="true" type="tns:DtoAgente"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DtoAgente">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CEDULA_PASAPORTE" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CEDULA_RL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CELULAR" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CORREO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="DOMICILIO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="ELECTRICO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="HIDROSANITARIO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="PROFESIONAL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="PROYECTISTA" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="REPRESENTANTE_LEGAL" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="SENESCYT" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="SOLICITUD_ID" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="TELEFONO" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ArrayOfDtoConcepto">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="DtoConcepto" nillable="true" type="tns:DtoConcepto"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DtoConcepto">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CODIGO_FORMULARIO_CONCEPTOIDENTIFICACION" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CONCEPTO_CATALOGO_ID" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CONCEPTO_ID" type="s:long"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CATALOGO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CONCEPTO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_TIPOCONCEPTO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="SOLICITUD_CONCEPTO_ID" type="s:long"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="VALOR_CONCEPTO" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcIngresoSolicitudCODResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcIngresoSolicitudCODResult" type="tns:ArrayOfDtoValidaErrores"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="solicitudId" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfDtoValidaErrores">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="DtoValidaErrores" nillable="true" type="tns:DtoValidaErrores"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DtoValidaErrores">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NombreCampo" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="Validacion" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcConsultarDatosTramiteCOD">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcSolicitudId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarDatosTramiteCODResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcConsultarDatosTramiteCODResult" type="tns:ArrayOfDtoFormulario"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strMsg" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfDtoFormulario">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="DtoFormulario" nillable="true" type="tns:DtoFormulario"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="EcConsultarEstructuraCOD">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="macroproceso" type="s:int"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="proceso" type="s:int"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="UsuarioSeg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PasswordSeg" type="s:string"/>
+                        <s:element minOccurs="1" maxOccurs="1" name="EntidadColaboradora" type="s:int"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EcConsultarEstructuraCODResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="EcConsultarEstructuraCODResult" type="tns:ArrayOfDtoConceptoFormulario"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="strMsg" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfDtoConceptoFormulario">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="DtoConceptoFormulario" nillable="true" type="tns:DtoConceptoFormulario"/>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DtoConceptoFormulario">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="CODIGO_FORMULARIO" type="s:string"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CONCEPTO_CATALOGO_ID" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="CONCEPTO_ID" type="s:int"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EC_MACROPROCESO_ID" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="1" maxOccurs="1" name="EC_PROCESO_ID" nillable="true" type="s:decimal"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="EDITABLE" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CATALOGO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CONCEPTO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_TIPO_CONCEPTO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="OBLIGATORIO" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="PRECISION" type="s:string"/>
+                    <s:element minOccurs="0" maxOccurs="1" name="TIPO_DATO" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="EcValidacionPorPredioSoapIn">
+        <wsdl:part name="parameters" element="tns:EcValidacionPorPredio"/>
+    </wsdl:message>
+    <wsdl:message name="EcValidacionPorPredioSoapOut">
+        <wsdl:part name="parameters" element="tns:EcValidacionPorPredioResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcIngresoSolicitudSoapIn">
+        <wsdl:part name="parameters" element="tns:EcIngresoSolicitud"/>
+    </wsdl:message>
+    <wsdl:message name="EcIngresoSolicitudSoapOut">
+        <wsdl:part name="parameters" element="tns:EcIngresoSolicitudResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcActualizarFechaPagoSoapIn">
+        <wsdl:part name="parameters" element="tns:EcActualizarFechaPago"/>
+    </wsdl:message>
+    <wsdl:message name="EcActualizarFechaPagoSoapOut">
+        <wsdl:part name="parameters" element="tns:EcActualizarFechaPagoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcRespuestaTramiteSoapIn">
+        <wsdl:part name="parameters" element="tns:EcRespuestaTramite"/>
+    </wsdl:message>
+    <wsdl:message name="EcRespuestaTramiteSoapOut">
+        <wsdl:part name="parameters" element="tns:EcRespuestaTramiteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcSubirDocumentacionSoapIn">
+        <wsdl:part name="parameters" element="tns:EcSubirDocumentacion"/>
+    </wsdl:message>
+    <wsdl:message name="EcSubirDocumentacionSoapOut">
+        <wsdl:part name="parameters" element="tns:EcSubirDocumentacionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcDarBajaTramiteSoapIn">
+        <wsdl:part name="parameters" element="tns:EcDarBajaTramite"/>
+    </wsdl:message>
+    <wsdl:message name="EcDarBajaTramiteSoapOut">
+        <wsdl:part name="parameters" element="tns:EcDarBajaTramiteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcDarBajaArchivoSoapIn">
+        <wsdl:part name="parameters" element="tns:EcDarBajaArchivo"/>
+    </wsdl:message>
+    <wsdl:message name="EcDarBajaArchivoSoapOut">
+        <wsdl:part name="parameters" element="tns:EcDarBajaArchivoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarDatosTramiteSoapIn">
+        <wsdl:part name="parameters" element="tns:EcConsultarDatosTramite"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarDatosTramiteSoapOut">
+        <wsdl:part name="parameters" element="tns:EcConsultarDatosTramiteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarLicenciasPredioSoapIn">
+        <wsdl:part name="parameters" element="tns:EcConsultarLicenciasPredio"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarLicenciasPredioSoapOut">
+        <wsdl:part name="parameters" element="tns:EcConsultarLicenciasPredioResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarPrediosEgresadosSoapIn">
+        <wsdl:part name="parameters" element="tns:EcConsultarPrediosEgresados"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarPrediosEgresadosSoapOut">
+        <wsdl:part name="parameters" element="tns:EcConsultarPrediosEgresadosResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcIngresoSolicitudCODSoapIn">
+        <wsdl:part name="parameters" element="tns:EcIngresoSolicitudCOD"/>
+    </wsdl:message>
+    <wsdl:message name="EcIngresoSolicitudCODSoapOut">
+        <wsdl:part name="parameters" element="tns:EcIngresoSolicitudCODResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarDatosTramiteCODSoapIn">
+        <wsdl:part name="parameters" element="tns:EcConsultarDatosTramiteCOD"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarDatosTramiteCODSoapOut">
+        <wsdl:part name="parameters" element="tns:EcConsultarDatosTramiteCODResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarEstructuraCODSoapIn">
+        <wsdl:part name="parameters" element="tns:EcConsultarEstructuraCOD"/>
+    </wsdl:message>
+    <wsdl:message name="EcConsultarEstructuraCODSoapOut">
+        <wsdl:part name="parameters" element="tns:EcConsultarEstructuraCODResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="WsEntidadColaboradoraSoap">
+        <wsdl:operation name="EcValidacionPorPredio">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para validar que el número de predio no tenga un tramite del mismo tipo ingresado en otra EC y en estado activo.</wsdl:documentation>
+            <wsdl:input message="tns:EcValidacionPorPredioSoapIn"/>
+            <wsdl:output message="tns:EcValidacionPorPredioSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitud">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para ingresar, reingresar y modificar una solicitud con todas las tablas relacionadas.</wsdl:documentation>
+            <wsdl:input message="tns:EcIngresoSolicitudSoapIn"/>
+            <wsdl:output message="tns:EcIngresoSolicitudSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcActualizarFechaPago">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para actualizar la fecha de pago del trámite, en el campo ANTICIPO_FECHA</wsdl:documentation>
+            <wsdl:input message="tns:EcActualizarFechaPagoSoapIn"/>
+            <wsdl:output message="tns:EcActualizarFechaPagoSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcRespuestaTramite">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para guardar la respuesta del tramite ya se aprobado o negado</wsdl:documentation>
+            <wsdl:input message="tns:EcRespuestaTramiteSoapIn"/>
+            <wsdl:output message="tns:EcRespuestaTramiteSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcSubirDocumentacion">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para subir archivos al sharepoint</wsdl:documentation>
+            <wsdl:input message="tns:EcSubirDocumentacionSoapIn"/>
+            <wsdl:output message="tns:EcSubirDocumentacionSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaTramite">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para dar de baja un trámite</wsdl:documentation>
+            <wsdl:input message="tns:EcDarBajaTramiteSoapIn"/>
+            <wsdl:output message="tns:EcDarBajaTramiteSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaArchivo">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para dar de baja un archivo</wsdl:documentation>
+            <wsdl:input message="tns:EcDarBajaArchivoSoapIn"/>
+            <wsdl:output message="tns:EcDarBajaArchivoSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramite">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para consultar los datos de un trámite</wsdl:documentation>
+            <wsdl:input message="tns:EcConsultarDatosTramiteSoapIn"/>
+            <wsdl:output message="tns:EcConsultarDatosTramiteSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarLicenciasPredio">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para consultar las licencias SLUM por predio</wsdl:documentation>
+            <wsdl:input message="tns:EcConsultarLicenciasPredioSoapIn"/>
+            <wsdl:output message="tns:EcConsultarLicenciasPredioSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarPrediosEgresados">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para consultar datos de predios egresados</wsdl:documentation>
+            <wsdl:input message="tns:EcConsultarPrediosEgresadosSoapIn"/>
+            <wsdl:output message="tns:EcConsultarPrediosEgresadosSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitudCOD">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para ingresar, reingresar y modificar una solicitud para formularios COD.</wsdl:documentation>
+            <wsdl:input message="tns:EcIngresoSolicitudCODSoapIn"/>
+            <wsdl:output message="tns:EcIngresoSolicitudCODSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramiteCOD">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para consultar los datos de un trámite para formularios COD</wsdl:documentation>
+            <wsdl:input message="tns:EcConsultarDatosTramiteCODSoapIn"/>
+            <wsdl:output message="tns:EcConsultarDatosTramiteCODSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarEstructuraCOD">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para consultar la estructura de formularios para COD</wsdl:documentation>
+            <wsdl:input message="tns:EcConsultarEstructuraCODSoapIn"/>
+            <wsdl:output message="tns:EcConsultarEstructuraCODSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="WsEntidadColaboradoraSoap" type="tns:WsEntidadColaboradoraSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="EcValidacionPorPredio">
+            <soap:operation soapAction="http://tempuri.org/EcValidacionPorPredio" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitud">
+            <soap:operation soapAction="http://tempuri.org/EcIngresoSolicitud" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcActualizarFechaPago">
+            <soap:operation soapAction="http://tempuri.org/EcActualizarFechaPago" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcRespuestaTramite">
+            <soap:operation soapAction="http://tempuri.org/EcRespuestaTramite" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcSubirDocumentacion">
+            <soap:operation soapAction="http://tempuri.org/EcSubirDocumentacion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaTramite">
+            <soap:operation soapAction="http://tempuri.org/EcDarBajaTramite" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaArchivo">
+            <soap:operation soapAction="http://tempuri.org/EcDarBajaArchivo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramite">
+            <soap:operation soapAction="http://tempuri.org/EcConsultarDatosTramite" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarLicenciasPredio">
+            <soap:operation soapAction="http://tempuri.org/EcConsultarLicenciasPredio" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarPrediosEgresados">
+            <soap:operation soapAction="http://tempuri.org/EcConsultarPrediosEgresados" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitudCOD">
+            <soap:operation soapAction="http://tempuri.org/EcIngresoSolicitudCOD" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramiteCOD">
+            <soap:operation soapAction="http://tempuri.org/EcConsultarDatosTramiteCOD" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarEstructuraCOD">
+            <soap:operation soapAction="http://tempuri.org/EcConsultarEstructuraCOD" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WsEntidadColaboradoraSoap12" type="tns:WsEntidadColaboradoraSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="EcValidacionPorPredio">
+            <soap12:operation soapAction="http://tempuri.org/EcValidacionPorPredio" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitud">
+            <soap12:operation soapAction="http://tempuri.org/EcIngresoSolicitud" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcActualizarFechaPago">
+            <soap12:operation soapAction="http://tempuri.org/EcActualizarFechaPago" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcRespuestaTramite">
+            <soap12:operation soapAction="http://tempuri.org/EcRespuestaTramite" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcSubirDocumentacion">
+            <soap12:operation soapAction="http://tempuri.org/EcSubirDocumentacion" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaTramite">
+            <soap12:operation soapAction="http://tempuri.org/EcDarBajaTramite" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcDarBajaArchivo">
+            <soap12:operation soapAction="http://tempuri.org/EcDarBajaArchivo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramite">
+            <soap12:operation soapAction="http://tempuri.org/EcConsultarDatosTramite" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarLicenciasPredio">
+            <soap12:operation soapAction="http://tempuri.org/EcConsultarLicenciasPredio" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarPrediosEgresados">
+            <soap12:operation soapAction="http://tempuri.org/EcConsultarPrediosEgresados" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcIngresoSolicitudCOD">
+            <soap12:operation soapAction="http://tempuri.org/EcIngresoSolicitudCOD" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarDatosTramiteCOD">
+            <soap12:operation soapAction="http://tempuri.org/EcConsultarDatosTramiteCOD" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EcConsultarEstructuraCOD">
+            <soap12:operation soapAction="http://tempuri.org/EcConsultarEstructuraCOD" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="WsEntidadColaboradora">
+        <wsdl:port name="WsEntidadColaboradoraSoap" binding="tns:WsEntidadColaboradoraSoap">
+            <soap:address location="http://172.22.0.108/MDMQ_WS_ENTIDAD_COLABORADORA/WsEntidadColaboradora.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="WsEntidadColaboradoraSoap12" binding="tns:WsEntidadColaboradoraSoap12">
+            <soap12:address location="http://172.22.0.108/MDMQ_WS_ENTIDAD_COLABORADORA/WsEntidadColaboradora.asmx"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
